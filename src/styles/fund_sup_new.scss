@@ -1,6 +1,174 @@
 /*
 BannerScroll.js
 */
+html, body{
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+    font-family: PingFang SC;
+    font-size: 12px;
+    background-color: #ffffff;
+}
+p {
+    margin: 0;
+}
+.no__bottom__nav .home__float_ball{
+    bottom:0.3rem;
+}
+.home{
+    &__bg{
+        min-height: 100vh;
+        padding-bottom: 0.5rem;
+        height: fit-content;
+		background-color: #F9F9F9;
+		&.no__bottom__nav{
+			padding-bottom: 0.1rem;
+           // padding-bottom: 0;
+		}
+        .float_ball_bg_live{
+            display: block;
+            width: 0.6rem;
+            height: auto;
+            //position: fixed;
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-bottom: constant(safe-area-inset-bottom);
+            z-index: 0;
+            //bottom: 1rem;
+            //right: 0.1rem;
+        }
+    }
+    &__banner{
+        z-index: 1;
+		position: relative;
+    }
+    &__addSectionA{
+        border-top-left-radius:0.2rem;
+        border-top-right-radius:0.2rem;
+        margin-top: -0.2rem;
+        z-index: 2;
+		position: relative;
+        background: #f9f9f9;
+    }
+    &__float_ball{
+        width:0.6rem;
+        height: 0.6rem;
+        position: fixed;
+        //bottom: 0.6rem;
+        bottom:0.8rem;
+        right: 0.04rem;
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: constant(safe-area-inset-bottom);
+        z-index: 100;
+        .float_ball_bg{
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            transition: 0.5s;
+            animation: rotate 3s linear infinite;
+        }
+        .float_ball_text{
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+    }
+    &__sectionA{
+        width: 100%;
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+    }
+    &__sectionA::-webkit-scrollbar{
+        width: 0 !important;
+        display: none;
+    }
+    &__sectionB{
+		padding: 0 0.15rem;
+		margin-bottom: 0.28rem;
+    }
+    &__SectionPMD{
+        padding: 0 0.15rem;
+        margin-bottom: 0.28rem;
+    }
+    &__sectionC{
+		padding: 0 0.15rem;
+		margin-bottom: 0.28rem; 
+    }
+    &__sectionD{
+		padding: 0 0.15rem;
+		margin-bottom: 0.4rem;
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: constant(safe-area-inset-bottom);
+    }
+    &__sectionE{
+		padding: 0 0.15rem;
+		margin-bottom: 0.4rem;
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: constant(safe-area-inset-bottom);
+    }
+    &__copyright{
+        margin: 0.16rem;
+		text-align: center;
+		
+		.copyright__text__black{
+			font-size: 0.12rem;
+			color: #999999;
+			line-height: 0.17rem;
+			margin-bottom: 0.02rem;
+		}
+		.copyright__text__gray{
+			font-size: 0.11rem;
+			color: #C6C6C6;
+			letter-spacing: 0;
+			text-align: center;
+			line-height: 0.2rem;
+		}
+    }
+    &__bottom{
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: constant(safe-area-inset-bottom);
+        overflow: hidden;
+        box-shadow: 0 2px 10px 0 rgba(199, 183, 183, 0.2);
+        height: 0.5rem;
+        width: 100%;
+        max-width: 640px;
+        position: fixed;
+        bottom: 0;
+        background-color: #ffffff;
+    }
+}
+.home__bg_mask{
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 640px;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+.spinD{
+    &__bg{
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto auto;
+    }
+    &__loader{
+        width: 100%;
+        margin-top: 0.78rem;
+        padding-left: 50%;
+    }
+    &__img{
+        width: auto;
+        height: 0.78rem;
+    }
+}
 .banner{
     &__bg{
 		padding:0.2rem 0.15rem ;
@@ -72,145 +240,6 @@ BannerScroll.js
     }
 }
 
-
-/*
-SectionA.js
-*/
-/*.sectionA{
-    &__bg{
-		//padding:0 0.16rem;
-		//margin-bottom: 0.3rem;
-		margin-bottom: 0.33rem;
-		&__box{
-			position: relative;
-		}
-		
-		.card{
-			&__label{
-				letter-spacing: 0;
-				line-height: 0.21rem;
-				text-align: left;
-				span.label__active.label{
-					font-size: 0.16rem;
-					color: #FC6626;
-					margin-right: 0.07rem;
-					font-weight: 600;
-				}
-				span.label{
-					font-size: 0.12rem;
-					color: #757A81;
-					
-				}			
-			}
-	
-			&__desc{
-				//font-size:0.12rem;
-				font-size:0.12rem;
-				//color: #FC6626;
-				line-height: 0.17rem;
-				text-align: left;
-				margin-bottom: 0.13rem;
-				white-space: pre;
-				color: #757A81;
-				span{
-					color: #FC6626;
-				}
-			}
-		    &__content{
-			position: relative;
-			   width: 100%;
-			   height: 1.40rem;
-			   border-radius: 0.12rem;
-			   overflow: hidden;
-			   box-sizing: border-box;
-			   padding:0.16rem  0.15rem  0.2rem 0.15rem;
-			   
-			   &.card1{
-				    background-image: url("../../../static/fund_sup_new/imgs/sectionA/sectionA_card_bg1.png");
-					background-size: 100% 100%;
-			   }
-			   &.card2{
-					background-image: url("../../../static/fund_sup_new/imgs/sectionA/sectionA_card_bg2.png");
-					background-size: 100% 100%;
-			   }
-			   
-		    }
-			&__rate_num{
-				display: flex;
-				flex-direction: row;
-				align-items: flex-start;
-				justify-content:left;
-				margin-bottom: 0.082rem;
-				
-				
-				.num{
-					font-size: 0.36rem;
-					color: #FC6626;
-					text-align: center;
-					line-height:0.288rem;
-					//font-weight: 600;
-					
-					font-family: "DIN Alternate";
-				}
-				.unit{
-					font-size: 0.21rem;
-					color: #FC6626;
-					height: 0.19rem;
-					line-height: 0.19rem;
-					margin-left: 0.02rem;
-					font-weight: bold;
-				}
-				
-				
-			}
-			&__rate_desc{
-				font-size: 0.10rem;
-				color: #91959A;
-				line-height: 0.11rem;
-				text-align: left;
-			}
-			&__button{
-				background-image: linear-gradient(50deg, #FFC5AC 0%, #FC6626 64%);
-				border-radius: 0.03rem;
-				font-size: 0.12rem;
-				color: #FFFFFF;
-				text-align: center;
-				width: 0.96rem;
-				height:0.24rem ;
-				line-height:0.24rem ;
-				position: absolute;
-				right: 0.2rem;
-				bottom:0.37rem;
-				
-				
-			}
-		    
-		    
-		   
-		}
-		.card__content.card2{
-			span.label__active.label{
-				color: #3F4B99 ;
-				
-			}
-			.card__desc{
-				color: #757A81;
-				span{
-					color: #FC6626;
-				}
-			}
-			.card__rate_num .num{
-				color:#3F4B99;
-			}
-			.card__rate_num .unit{
-				color: #3F4B99 ;
-			}
-			.card__button{
-				background-image: linear-gradient(90deg, #7382C9 0%, #3F4B99 100%);
-			}
-		}
-    }
-}*/
 .sectionA{
     &__bg{
 		//margin-bottom: 0.33rem;
@@ -223,7 +252,7 @@ SectionA.js
 			
 			.card__content{
 				position: relative;
-				background: url(../../../static/fund_sup_new/imgs/sectionA/sectionA_card.png) no-repeat;
+				// background: url(../../../static/fund_sup_new/imgs/sectionA/sectionA_card.png) no-repeat;
 				background-size: 100%  100%;
 				height: 1.7rem;
 				width: 100%;
@@ -260,7 +289,7 @@ SectionA.js
 				}
 			}
 			.icon-kc{
-				background: url(../../../static/fund_sup_new/imgs/sectionA/sectionA_tips_card_icon.png) no-repeat;
+				// background: url(../../../static/fund_sup_new/imgs/sectionA/sectionA_tips_card_icon.png) no-repeat;
 				background-size: 100% 100%;
 				width:1.08rem ;
 				height:0.13rem ;
@@ -344,7 +373,7 @@ SectionA.js
 				}
 				.icon-tips{
 					display: block;
-					background: url(../../../static/fund_sup_new/imgs/sectionA/sectionA_tips_icon.png) no-repeat;
+					// background: url(../../../static/fund_sup_new/imgs/sectionA/sectionA_tips_icon.png) no-repeat;
 					background-size: 100% 100%;
 					width:0.2rem ;
 					height:0.2rem ;
@@ -422,7 +451,7 @@ SectionA.js
 				width: auto;
 			}
 			.icon-arrow{
-				background: url(../../../static/fund_sup_new/imgs/sectionA/tips_icon.png) no-repeat center;
+				// background: url(../../../static/fund_sup_new/imgs/sectionA/tips_icon.png) no-repeat center;
 				background-size: 100% 100%;
 				width:0.12rem ;
 				height:0.12rem ;
@@ -434,7 +463,7 @@ SectionA.js
 				color: #FFFFFF;
 			}
 			.btn-close{
-				background: url(../../../static/fund_sup_new/imgs/sectionA/tips_close.png) center no-repeat ;
+				// background: url(../../../static/fund_sup_new/imgs/sectionA/tips_close.png) center no-repeat ;
 				background-size:0.08rem 0.08rem;
 				width: 0.22rem;
 				height: 0.22rem;
@@ -530,7 +559,7 @@ SectionB.js
 						content: " ";
 						width: 0.6rem;
 						height: 0.43rem;
-						background: url(../../../static/fund_sup_new/imgs/sectionB/tabs_active_right_arrow.png) no-repeat;
+						// background: url(../../../static/fund_sup_new/imgs/sectionB/tabs_active_right_arrow.png) no-repeat;
 						background-size: 100%;
 						position: absolute;
 						top:0;
@@ -555,7 +584,7 @@ SectionB.js
 						content: " ";
 						width: 1.45rem;
 						height: 0.43rem;
-						background: url(../../../static/fund_sup_new/imgs/sectionB/tabs_active_center_arrow.png) no-repeat;
+						// background: url(../../../static/fund_sup_new/imgs/sectionB/tabs_active_center_arrow.png) no-repeat;
 						background-size: 100%;
 						position: absolute;
 						top:0;
@@ -575,7 +604,7 @@ SectionB.js
 						content: " ";
 						width: 0.6rem;
 						height: 0.43rem;
-						background: url(../../../static/fund_sup_new/imgs/sectionB/tabs_active_left_arrow.png) no-repeat;
+						// background: url(../../../static/fund_sup_new/imgs/sectionB/tabs_active_left_arrow.png) no-repeat;
 						background-size: 100%;
 						position: absolute;
 						top:0;
@@ -704,7 +733,7 @@ SectionB.js
 			position: relative;
 			&:after{
 				content: " ";
-				background-image: url("../../../static/fund_sup_new/imgs/sectionB/icon_colon.png");
+				// background-image: url("../../../static/fund_sup_new/imgs/sectionB/icon_colon.png");
 				background-size: 100% 100%;
 				display: block;
 				width: 0.1rem;
@@ -738,7 +767,7 @@ SectionB.js
 				.time__state1{
 					width: 1.43rem;
 					height: 0.23rem;
-					background: url("../../../static/fund_sup_new/imgs/sectionB/time_state1_bg.png") no-repeat center;
+					// background: url("../../../static/fund_sup_new/imgs/sectionB/time_state1_bg.png") no-repeat center;
 					background-size: 100% 100%;
 				}
 				.more__btn{
@@ -782,7 +811,7 @@ SectionB.js
 					width: 48%;
 				}
 				&__right__arrow{
-					background: url("../../../static/fund_sup_new/imgs/sectionB/icon_right_arrow.png") top center no-repeat;
+					// background: url("../../../static/fund_sup_new/imgs/sectionB/icon_right_arrow.png") top center no-repeat;
 					background-size: 100% 100%;
 					width: 0.07rem;
 					height: 0.12rem ;
@@ -1014,7 +1043,7 @@ body {
 	.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
 		/*background: url("../../../static/fund_sup_new/imgs/sectionA/pagination_bullet.png") top center no-repeat;
 		background-size: 100% 100%;*/
-		background: url("../../../static/fund_sup_new/imgs/sectionA/pagination_bullet.png") top center no-repeat;
+		// background: url("../../../static/fund_sup_new/imgs/sectionA/pagination_bullet.png") top center no-repeat;
 		background-size: 100% 100%;
 		opacity: 1;
 		width: 0.03rem;
@@ -1024,7 +1053,7 @@ body {
 		
 	}
 	.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
-		background: url("../../../static/fund_sup_new/imgs/sectionA/pagination_bullet_active.png") top center no-repeat;
+		// background: url("../../../static/fund_sup_new/imgs/sectionA/pagination_bullet_active.png") top center no-repeat;
 		background-size: 100% 100%;
 		width: 0.12rem;
 		height: 0.03rem;
@@ -1234,7 +1263,7 @@ SectionD.js
 				box-sizing: border-box;
 				text-align: center;
 				height: 0.14rem;
-				background: url("../../../static/fund_sup_new/imgs/sectionD/icon_pk_vs.png") top center no-repeat;
+				// background: url("../../../static/fund_sup_new/imgs/sectionD/icon_pk_vs.png") top center no-repeat;
 				background-size: 100% 100%;
 			}
 			&__vs__left{
@@ -1246,7 +1275,7 @@ SectionD.js
 				color: #FFFFFF;
 				padding: 0.07rem 0.05rem;
 				line-height: 0.15rem;
-				background: url("../../../static/fund_sup_new/imgs/sectionD/icon_pk_left.png") top center no-repeat;
+				// background: url("../../../static/fund_sup_new/imgs/sectionD/icon_pk_left.png") top center no-repeat;
 				background-size: 100% 100%;
 				
 			}
@@ -1259,7 +1288,7 @@ SectionD.js
 				color: #FFFFFF;
 				padding: 0.07rem 0.05rem;
 				line-height: 0.15rem;
-				background: url("../../../static/fund_sup_new/imgs/sectionD/icon_pk_right.png") top center no-repeat;
+				// background: url("../../../static/fund_sup_new/imgs/sectionD/icon_pk_right.png") top center no-repeat;
 				background-size: 100% 100%;
 			}
 			
@@ -1349,7 +1378,7 @@ SectionE.js
 		}
 		.ts-btn-icon{
 			display: inline-block;
-			background:url("../../../static/fund_sup_new/imgs/sectionE/icon_right_white_arrow.png") no-repeat center center;
+			// background:url("../../../static/fund_sup_new/imgs/sectionE/icon_right_white_arrow.png") no-repeat center center;
 			background-size: 100% 100%;
 			width: 0.07rem;
 			height: 0.08rem;
@@ -1619,7 +1648,7 @@ Trend.js
        
     }
     .icon-hot{
-        background:url("../../../static/fund_sup_new/imgs/sectionPMD/icon_hot.png") no-repeat center center;
+        // background:url("../../../static/fund_sup_new/imgs/sectionPMD/icon_hot.png") no-repeat center center;
         width: 0.25rem;
         height: 0.25rem;
         background-size: 100%;
@@ -1628,7 +1657,7 @@ Trend.js
         top:0.07rem;
     }
     .icon-arrow{
-        background:url("../../../static/fund_sup_new/imgs/sectionPMD/icon_right_arrow.png") no-repeat center center;
+        // background:url("../../../static/fund_sup_new/imgs/sectionPMD/icon_right_arrow.png") no-repeat center center;
         width: 0.25rem;
         height: 0.25rem;
         background-size: 100%  100%;
@@ -1637,7 +1666,7 @@ Trend.js
         top:0.07rem;
     }
     .icon-db{
-        background:url("../../../static/fund_sup_new/imgs/sectionPMD/icon_db.png") no-repeat center center;
+        // background:url("../../../static/fund_sup_new/imgs/sectionPMD/icon_db.png") no-repeat center center;
         width: 0.5rem;
         height: 0.16rem;
         background-size: 100%;

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <meta
       name="description"
       content="Web site created using create-react-app"
@@ -25,6 +25,20 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script type="text/javascript">
+      !function (e, t) {
+        function n() {
+          var e = o.getBoundingClientRect().width;
+          640 < e && (e = 640),
+            window.rem = e / 3.75,
+            o.style.fontSize = window.rem + "px"
+        }
+        var o = e.documentElement,
+          r = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        n(),
+          e.addEventListener && t.addEventListener(r, n, !1);
+      }(document, window);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

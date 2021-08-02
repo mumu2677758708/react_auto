@@ -35,13 +35,13 @@ class BannerOne extends Component {
       let LIST_DATA= bannerData;
       return (
           <div className="banner__one__bg">
-      <div className="swiper-container swiper-container-banner-one" >
-        <div className="swiper-wrapper">
-          {LIST_DATA.map((imgData, index)=>this.renderSlide(imgData, index))}
-        </div>
-        <div className="swiper-pagination"></div>
-      </div>
-    </div>
+						<div className="swiper-container swiper-container-banner-one" >
+							<div className="swiper-wrapper">
+								{LIST_DATA.map((imgData, index)=>this.renderSlide(imgData, index))}
+							</div>
+							<div className="swiper-pagination"></div>
+						</div>
+					</div>
       );
   }
 }

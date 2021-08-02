@@ -11,6 +11,11 @@ import BANNER_IMG20 from "../images/banner/banner_20.png";
 import BANNER_IMG_ONE_18 from "../images/banner/banner_one_18.png";
 import BANNER_IMG_ONE_20 from "../images/banner/banner_one_20.png";
 
+import iconAddSecA_1 from "../images/icon/addSecAIcon_1.png";
+import iconAddSecA_2 from "../images/icon/addSecAIcon_2.png";
+import iconAddSecA_3 from "../images/icon/addSecAIcon_3.png";
+import iconAddSecA_4 from "../images/icon/addSecAIcon_4.png";
+
 export const MOCK_BANNER_LIST = [{
     imgUrl: BANNER_IMG20,
     imgUrlOne: BANNER_IMG_ONE_20,
@@ -68,3 +73,52 @@ export const MOCK_BANNER_LIST = [{
   },
 
 ]
+export const ADD_SECA_CFG = [{
+    icon: iconAddSecA_1,
+    label: "现金管理",
+    link: {
+      funcName: "webVC",
+      args: {
+        url: "https://yrd.yixinfund.com/dh/fund/activity_xjgl/index.html"
+      },
+    },
+    buryTag: `icon-现金管理`,
+    sensors_title: "现金管理"
+  },
+  {
+    icon: iconAddSecA_2,
+    label: "投资计划",
+    link: {
+      funcName: "webVC",
+      args: {
+        url: "https://yrd.yixinfund.com/dh/fund/yxl_yjcy/index.html"
+      }
+    },
+    buryTag: `icon-投资计划`,
+    sensors_title: "投资计划"
+  },
+  {
+    icon: iconAddSecA_3,
+    label: "目标盈",
+    link: {
+      funcName: "webVC",
+      args: {
+        url: "https://yrd.yixinfund.com/dh/fund/yxl_mby_cgb/index.html"
+      }
+    },
+    buryTag: `icon-目标盈`,
+    sensors_title: "目标盈"
+  },
+  {
+    icon: iconAddSecA_4,
+    label: "全部产品",
+    link: {
+      funcName: "webVC",
+      args: {
+        url: 'https://yrd.yixinfund.com/dh/fund/combine_guide/index.html#/'
+      }
+    },
+    buryTag: `icon-全部产品`,
+    sensors_title: "全部产品"
+  }
+];

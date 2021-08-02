@@ -25,7 +25,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       !function (e, t) {
         function n() {
           var e = o.getBoundingClientRect().width;
@@ -38,6 +38,20 @@
         n(),
           e.addEventListener && t.addEventListener(r, n, !1);
       }(document, window);
+    </script> -->
+    <script type="text/javascript">
+      !function(document, window){
+        var html = document.documentElement
+        var event = 'orientationchange' in window ? 'orientationchange': 'resize'
+        fn()
+        document.addEventListener && window.addEventListener(event, fn, false)
+        function fn(){
+          var _width = html.getBoundingClientRect().width
+          _width > 640 && (_width = 640),
+          window.rem = _width / 3.75,
+          html.style.fontSize = window.rem + 'px'
+        }
+      }(document, window)
     </script>
   </head>
   <body>

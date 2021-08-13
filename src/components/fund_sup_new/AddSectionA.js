@@ -1,10 +1,10 @@
 import { Component } from 'react'
-import {jumpLink } from '../'
+import { jumpLink } from '../../common/utils'
 export default class AddSectionA extends Component{
   renderIcon = ({icon, label, link},index) => {
     return (
       <div className = "diamond" key = {index}
-         onClick = {() => this.handleJump(link)} >
+         onClick = {() => jumpLink(link)} >
         <img src={icon} className="diamond_icon" alt="img" />
         <p className="diamond_label">{label}</p>
       </div>

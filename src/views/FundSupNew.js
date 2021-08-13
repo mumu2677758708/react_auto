@@ -1,12 +1,13 @@
 import { Component } from 'react'
-import BannerOne from '../components/BannerOne'
-import AddSectionA from '../components/AddSectionA'
+import BannerOne from '../components/fund_sup_new/BannerOne'
+import AddSectionA from '../components/fund_sup_new/AddSectionA'
+import SectionA from '../components/fund_sup_new/SectionA'
+import SectionBTabs from '../components/fund_sup_new/SectionBTabs'
 import {
   MOCK_BANNER_LIST,
   ADD_SECA_CFG
 } from '../common/config.js'
 import '../styles/fund_sup_new/main.scss'
-// import '../styles/fund_sup_new.scss'
 export default class FundSupNew extends Component{
   render() {
     return (
@@ -16,6 +17,12 @@ export default class FundSupNew extends Component{
             </div>
             <div className="home__addSectionA">
                 <AddSectionA data={ADD_SECA_CFG} />
+            </div>
+            <div className="home__sectionA" id="home__sectionA">
+                <SectionA/>
+            </div>
+            <div className="home__sectionB">
+              <SectionBTabs />
             </div>
           </div>
         );

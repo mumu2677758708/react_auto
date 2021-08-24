@@ -10,8 +10,6 @@ export function jumpLink(link){
   window.location.href = link
 }
 export function hrefNATIVEPage(homeSchemeObject) {
-  console.log(window.YRBridge)
-  console.log('YRBridge')
   let { funcName, args } = homeSchemeObject;
     if(!funcName) return Toast.info("homeSchemeObject is not correct! ");
     if(!window.YRBridge) return Toast.info("YRBridge is not exit! ");
